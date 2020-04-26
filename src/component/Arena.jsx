@@ -94,7 +94,7 @@ class Arena extends Component {
             }
 
             if (paginateGameArena !== null && paginateGameArena !== undefined && paginateGameArena.length > 0) {
-                let filterGameCard = paginateGameArena.filter(eachData => eachData ? eachData.title.toLowerCase().match(search) : []);
+                let filterGameCard = paginateGameArena.filter(eachData => eachData ? eachData.title.match(search) : []);
                 let sortGameCard;
                 if (sort === 'ascending') {
                     sortGameCard = filterGameCard.sort((a, b) => (a.score - b.score))
@@ -190,7 +190,7 @@ class Arena extends Component {
                                             type="text" 
                                             className="form-continer" 
                                             eventKey="search" 
-                                            onChange={(event)=> this.handleFilter('search', event.target.value.toLowerCase())} 
+                                            onChange={(event)=> this.handleFilter('search', event.target.value)} 
                                             placeholder="Search Game Name" 
                                             autoComplete="on"
                                             value={search}
