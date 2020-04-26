@@ -1,0 +1,1 @@
+export const GET_GAME_ARENA = 'GET_GAME_ARENA';
